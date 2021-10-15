@@ -1,6 +1,6 @@
 #!/bin/bash
 
-xml_start="<?xml version="1.0" ?><root>"
+xml_start="<?xml version=\"1.0\" ?><root>"
 xml_end="</root>"
 
 instance=$1
@@ -21,8 +21,6 @@ for ((k=2; k<=$n; k++)) do
     echo $xml_start > $input_file
     grep -m$k "agent" $instance >> $input_file
     echo $xml_end >> $input_file
-    # print progress
-    echo $input_file
     # run CCBS on the instance
     ./CCBS $map $input_file > $output_file
     # if no solution found, break

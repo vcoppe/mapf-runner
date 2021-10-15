@@ -18,4 +18,4 @@ make
 n=$(nproc --all)
 
 # get all original instance files
-find Instances -name all -prune -o -name \*.xml -not -name \*map.xml -print|xargs -I{} -n1 -P$n $script {}
+find Instances -name all -prune -o -name \*.xml -not -name \*map.xml -print | parallel -P $n --bar $script {}
