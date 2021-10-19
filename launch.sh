@@ -1,7 +1,27 @@
 #!/bin/bash
 
-./run.sh ../Continuous-CBS CCBS-original
+dir=$(pwd)
+
+cd ../Continuous-CBS
+
+git checkout master
+git pull
+cmake .
+make
+
+cd $dir
+
+./run.sh ../Continuous-CBS
 ./extract.sh ../Continuous-CBS original
 
-./run.sh ../Continuous-CBS CCBS-rtree
+cd ../Continuous-CBS
+
+git checkout dev
+git pull
+cmake .
+make
+
+cd $dir
+
+./run.sh ../Continuous-CBS
 ./extract.sh ../Continuous-CBS rtree

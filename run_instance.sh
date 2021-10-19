@@ -3,8 +3,8 @@
 xml_start="<?xml version=\"1.0\" ?><root>"
 xml_end="</root>"
 
-executable=$1
-instance=$2
+instance=$1
+run_dir=$2
 
 echo $instance
 
@@ -27,7 +27,7 @@ if [[ $dir == *"roadmaps"* ]]; then
         grep -m$k "agent" $instance >> $input_file
         echo $xml_end >> $input_file
         # run CCBS on the instance
-        "./$executable" $map $input_file $config3 > $output_file
+        ./CCBS $map $input_file $config3 > $output_file
         # if no solution found, break
         sol=$(grep "Soulution found: true" $output_file -c)
         if [[ sol -eq 0 ]]; then
@@ -37,7 +37,8 @@ if [[ $dir == *"roadmaps"* ]]; then
 else
     # for each connectedness
     for ((c=2; c<=5; c++)) do
-        config="config-$c.xml"
+        config="$run_dir/config-$c.xml"
+        echo $config
         # for each number of agents
         for ((k=2; k<=$n; k++)) do
             input_file="$dir/all/$file-$k-c$c.xml"
@@ -47,7 +48,7 @@ else
             grep -m$k "agent" $instance >> $input_file
             echo $xml_end >> $input_file
             # run CCBS on the instance
-            "./$executable" $map $input_file $config > $output_file
+            ./CCBS $map $input_file $config > $output_file
             # if no solution found, break
             sol=$(grep "Soulution found: true" $output_file -c)
             if [[ sol -eq 0 ]]; then
