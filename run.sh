@@ -14,4 +14,4 @@
 n=$(nproc --all)
 
 # get all original instance files
-find "$1/Instances" -name all -prune -o -name \*.xml -not -name \*map.xml -print | parallel -P $n --bar ./run_instance.sh $2 {}
+find "$1/Instances" -name all -prune -o -name \*.xml -not -name \*map.xml -print | xargs -I{} -n1 -P$n ./run_instance.sh $2 {}

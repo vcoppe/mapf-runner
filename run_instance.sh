@@ -6,6 +6,8 @@ xml_end="</root>"
 executable=$1
 instance=$2
 
+echo $instance
+
 # find corresponding map file (map.xml in same folder)
 dir=$(dirname $instance)
 map="$dir/map.xml"
