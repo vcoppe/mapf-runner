@@ -54,7 +54,7 @@ else
             if [[ sol -eq 0 ]]; then
                 break
             fi
+            break
         done
-        break
     done
 fi
