@@ -18,6 +18,7 @@ mkdir -p "$dir/all"
 n=$(grep "agent" $instance -c)
 
 if [[ $dir == *"roadmaps"* ]]; then
+    config="$run_dir/config-2.xml"
     # for each number of agents
     for ((k=2; k<=$n; k++)) do
         input_file="$dir/all/$file-$k.xml"
@@ -27,7 +28,7 @@ if [[ $dir == *"roadmaps"* ]]; then
         grep -m$k "agent" $instance >> $input_file
         echo $xml_end >> $input_file
         # run CCBS on the instance
-        ./CCBS $map $input_file $config3 > $output_file
+        ./CCBS $map $input_file $config > $output_file
         # if no solution found, break
         sol=$(grep "Soulution found: true" $output_file -c)
         if [[ sol -eq 0 ]]; then
