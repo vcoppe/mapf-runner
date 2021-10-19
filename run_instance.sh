@@ -33,6 +33,7 @@ if [[ $dir == *"roadmaps"* ]]; then
         if [[ sol -eq 0 ]]; then
             break
         fi
+        break
     done
 else
     # for each connectedness
@@ -54,5 +55,6 @@ else
                 break
             fi
         done
+        break
     done
 fi
