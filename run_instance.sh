@@ -38,7 +38,6 @@ else
     # for each connectedness
     for ((c=2; c<=5; c++)) do
         config="$run_dir/config-$c.xml"
-        echo $config
         # for each number of agents
         for ((k=2; k<=$n; k++)) do
             input_file="$dir/all/$file-$k-c$c.xml"
