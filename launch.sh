@@ -2,6 +2,8 @@
 
 dir=$(pwd)
 
+git pull
+
 cd ../Continuous-CBS
 
 git checkout master
