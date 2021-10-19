@@ -5,13 +5,6 @@ dir=$(pwd)
 # move to CCBS directory
 cd $1
 
-# update
-git pull
-
-# recompile
-cmake .
-make
-
 # get number of processors
 n=$(nproc --all)
 

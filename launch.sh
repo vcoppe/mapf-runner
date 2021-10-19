@@ -12,7 +12,7 @@ make
 cd $dir
 
 ./run.sh ../Continuous-CBS
-./extract.sh ../Continuous-CBS original
+./extract.sh ../Continuous-CBS ../results/original
 
 cd ../Continuous-CBS
 
@@ -24,4 +24,4 @@ make
 cd $dir
 
 ./run.sh ../Continuous-CBS
-./extract.sh ../Continuous-CBS rtree
+./extract.sh ../Continuous-CBS ../results/rtree
