@@ -16,6 +16,9 @@ cd $dir
 
 cd ../Continuous-CBS
 
+rm CMakeCache.txt
+rm -r CMakeFiles
+
 git checkout dev
 git pull
 cmake .
