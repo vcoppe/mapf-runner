@@ -23,7 +23,7 @@ rm -r CMakeFiles
 
 git checkout dev
 git pull
-cmake .
+cmake -DBOOST_ROOT=/usr/include/boost/ .
 make
 
 cd $dir
