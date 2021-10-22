@@ -6,8 +6,6 @@ RUN apt install -y git
 RUN apt install -y cmake
 RUN apt install -y wget
 
-RUN cmake
-
 RUN wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
 RUN tar -xjf boost_1_77_0.tar.bz2 boost_1_77_0/boost
 
