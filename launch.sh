@@ -9,7 +9,7 @@ dir=$(pwd)
 # cmake .
 # make
 #
-# results_dir="../results-$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
+# results_dir="../results/$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
 #
 # cd $dir
 #
@@ -26,7 +26,7 @@ git pull
 cmake .
 make
 
-results_dir="../results-$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
+results_dir="../results/$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
 
 cd $dir
 
