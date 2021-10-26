@@ -27,4 +27,4 @@ make
 cd $dir
 
 ./run.sh ../Continuous-CBS
-./extract.sh ../Continuous-CBS ../results/rtree-mod-query
+./extract.sh ../Continuous-CBS ../results/rtree-small
