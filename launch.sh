@@ -9,10 +9,12 @@ dir=$(pwd)
 # cmake .
 # make
 #
+# results_dir="../results-$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
+#
 # cd $dir
 #
 # ./run.sh ../Continuous-CBS
-# ./extract.sh ../Continuous-CBS ../results/original
+# ./extract.sh ../Continuous-CBS $results_dir
 
 cd ../Continuous-CBS
 
@@ -24,7 +26,9 @@ git pull
 cmake .
 make
 
+results_dir="../results-$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
+
 cd $dir
 
 ./run.sh ../Continuous-CBS
-./extract.sh ../Continuous-CBS ../results/rtree-quad
+./extract.sh ../Continuous-CBS $results_dir
