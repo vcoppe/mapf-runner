@@ -2,17 +2,17 @@
 
 dir=$(pwd)
 
-cd ../Continuous-CBS
-
-git checkout master
-git pull
-cmake .
-make
-
-cd $dir
-
-./run.sh ../Continuous-CBS
-./extract.sh ../Continuous-CBS ../results/original
+# cd ../Continuous-CBS
+#
+# git checkout master
+# git pull
+# cmake .
+# make
+#
+# cd $dir
+#
+# ./run.sh ../Continuous-CBS
+# ./extract.sh ../Continuous-CBS ../results/original
 
 cd ../Continuous-CBS
 
@@ -27,4 +27,4 @@ make
 cd $dir
 
 ./run.sh ../Continuous-CBS
-./extract.sh ../Continuous-CBS ../results/rtree
+./extract.sh ../Continuous-CBS ../results/rtree-mod-query
