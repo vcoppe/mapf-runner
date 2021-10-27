@@ -6,8 +6,6 @@ xml_end="</root>"
 instance=$1
 run_dir=$2
 
-echo $instance
-
 # find corresponding map file (map.xml in same folder)
 dir=$(dirname $instance)
 map="$dir/map.xml"
@@ -57,3 +55,5 @@ else
         done
     done
 fi
+
+echo $instance

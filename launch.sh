@@ -2,33 +2,24 @@
 
 dir=$(pwd)
 
-# cd ../Continuous-CBS
-#
-# git checkout master
-# git pull
-# cmake .
-# make
-#
-# results_dir="../results/$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
-#
-# cd $dir
-#
-# ./run.sh ../Continuous-CBS
-# ./extract.sh ../Continuous-CBS $results_dir
+branches=( master-reverse )
 
-cd ../Continuous-CBS
+for branch in "${branches[@]}"
+do
+    cd ../Continuous-CBS
 
-rm CMakeCache.txt
-rm -r CMakeFiles
+    rm CMakeCache.txt
+    rm -r CMakeFiles
 
-git checkout dev
-git pull
-cmake .
-make
+    git checkout $branch
+    git pull
+    cmake .
+    make
 
-results_dir="../results/$(git rev-parse --abbrev-ref HEAD)-$(git rev-parse --short HEAD)"
+    results_dir="../results/$branch-$(git rev-parse --short HEAD)"
 
-cd $dir
+    cd $dir
 
-./run.sh ../Continuous-CBS
-./extract.sh ../Continuous-CBS $results_dir
+    ./run.sh ../Continuous-CBS
+    ./extract.sh ../Continuous-CBS $results_dir
+done
