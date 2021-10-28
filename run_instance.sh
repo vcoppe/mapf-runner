@@ -35,7 +35,7 @@ if [[ $dir == *"roadmaps"* ]]; then
     done
 else
     # for each connectedness
-    for c in 2 5; do
+    for ((c=2; c<=5; c++)) do
         config="$run_dir/config-$c.xml"
         # for each number of agents
         for ((k=2; k<=$n; k++)) do

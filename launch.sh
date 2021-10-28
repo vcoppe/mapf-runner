@@ -2,7 +2,7 @@
 
 dir=$(pwd)
 
-branches=( dev-mem-rtree )
+branches=( master-reverse dev )
 
 for branch in "${branches[@]}"
 do
