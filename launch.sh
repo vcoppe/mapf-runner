@@ -2,7 +2,7 @@
 
 dir=$(pwd)
 
-branches=( dev-avoidance-only )
+branches=( dev-avoidance-only-mem )
 
 for branch in "${branches[@]}"
 do
