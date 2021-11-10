@@ -2,7 +2,7 @@
 
 dir=$(pwd)
 
-branches=( dev-avoidance )
+branches=( master-reverse dev-avoidance )
 
 for branch in "${branches[@]}"
 do
