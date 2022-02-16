@@ -7,14 +7,14 @@ branches=( master-reverse dev-avoidance-only dev-avoidance-only-naive dev-avoida
 for branch in "${branches[@]}"
 do
     cd ../Continuous-CBS
+    
+    rm CMakeCache.txt
+    rm -r CMakeFiles
 
     git checkout $branch
     git pull
     cmake .
     make
-
-    rm CMakeCache.txt
-    rm -r CMakeFiles
 
     results_dir="../results/$branch-$(git rev-parse --short HEAD)"
 
