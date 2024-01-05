@@ -2,7 +2,7 @@
 
 dir=$(pwd)
 
-branches=( master-reverse dev-avoidance-only dev-avoidance-only-naive-linear )
+branches=( bench )
 
 for branch in "${branches[@]}"
 do
@@ -17,6 +17,7 @@ do
     make
 
     results_dir="../results/$branch-$(git rev-parse --short HEAD)"
+    mkdir -p $results_dir
 
     cd $dir
 
