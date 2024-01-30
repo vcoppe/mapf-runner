@@ -16,6 +16,7 @@ results = {
     'agents': [],
     'connectivity': [],
     'flowtime': [],
+    'runtime': [],
 }
 
 # Open each file and parse the results
@@ -50,6 +51,9 @@ for file in result_files:
             scenario = matches.group(1)
             agents = matches.group(2)
             connectivity = matches.group(3)
+
+            # Get the runtime
+            runtime = float(lines[1].split(':')[1].strip())
             
             # Add the results to the dictionary
             results['map'].append(map_name)
@@ -57,9 +61,13 @@ for file in result_files:
             results['agents'].append(agents)
             results['connectivity'].append(connectivity)
             results['flowtime'].append(flowtime)
+            results['runtime'].append(runtime)
 
 # Create a dataframe from the dictionary
 df = pd.DataFrame(results)
+
+# Sort the dataframe by map, scenario, agents, connectivity
+df = df.sort_values(['map', 'scenario', 'agents', 'connectivity'])
 
 # Save the dataframe to a csv file
 df.to_csv('results.csv', index=False)
